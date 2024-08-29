@@ -1,7 +1,7 @@
-import "./App.css";
+import { WatchList } from "./components/watchList";
 
 function App() {
-  return <>Hello World !</>;
+  return <WatchList />;
 }
 
 export default App;
