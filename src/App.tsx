@@ -1,4 +1,4 @@
-import { WatchList } from "./components/watchList";
+import { WatchList } from "./components/WatchList";
 
 function App() {
   return <WatchList />;
