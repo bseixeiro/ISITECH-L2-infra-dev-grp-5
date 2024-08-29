@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { WatchListMenu } from "./WatchListMenu";
 
 // type Props = {
@@ -6,20 +6,32 @@ import { WatchListMenu } from "./WatchListMenu";
 // };
 
 const WatchList: FC = () => {
-  // const {} = props;
+  const [categories, setCategories] = useState<Array<string>>([]);
 
-  // const [categories, setCategories] = useState<Array<string>>([]);
-  const categoriesTest = ["WATCHLIST", "HISTORIQUE", "ACTION", "SF", "CHILL"];
-  // const getCategory = () => {
-  //   setCategories(["WATCHLIST", "HISTORIQUE", "ACTION", "SF", "CHILL"]);
-  // };
+  const getCategory = async () => {
+    const { data, error } = await supabase.from("Category").select("name");
+
+    if (error) {
+      console.error("Error while retrieving categories:", error);
+    } else {
+      const categoryNames = data.map(
+        (category: { name: unknown }) => category.name
+      );
+      setCategories(categoryNames);
+    }
+  };
+
+  useEffect(() => {
+    getCategory();
+  }, []);
   return (
     <div className="flex w-screen h-screen">
       <aside className="flex flex-col w-1/5 bg-black p-4">
-        {categoriesTest.map((category) => (
+        {categories.map((category, idx) => (
           <WatchListMenu
+            key={idx}
             label={category}
-            idx={0}
+            idx={categories.indexOf(category)}
             onClick={function (): void {
               throw new Error("Function not implemented.");
             }}
