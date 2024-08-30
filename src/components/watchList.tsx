@@ -29,7 +29,6 @@ const WatchList: FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const userId = 1; // A remplacer !!!!
 
-  // Ajout catégorie
   const getCategory = async () => {
     const { data, error } = await supabase.from("Category").select("name");
 
@@ -81,7 +80,6 @@ const WatchList: FC = () => {
   const addCategory = async () => {
     if (newCategory.trim() === "") return;
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { data, error } = await supabase
       .from("Category")
       .insert([{ name: newCategory }]);
@@ -134,9 +132,9 @@ const WatchList: FC = () => {
         {categories.map((category, idx) => (
           <WatchListMenu
             key={idx}
-            label={category}
+            label={category.name}
             idx={categories.indexOf(category)}
-            onClick={() => handleCategoryClick(category)}
+            onClick={() => handleCategoryClick(category.name)}
           />
         ))}
         <button
