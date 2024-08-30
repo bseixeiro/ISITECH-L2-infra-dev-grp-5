@@ -11,7 +11,7 @@ function App() {
         onSearchChange={(e) => setSearchInputValue(e.target.value)}
         searchValue={searchInputValue}
       ></Navbar>
-      <WatchList />;
+      <WatchList />
     </>
   );
 }

@@ -138,7 +138,7 @@ const WatchList: FC = () => {
   };
 
   return (
-    <div className="flex w-screen h-screen">
+    <div className="flex w-screen h-screen mt-4">
       <aside className="flex flex-col w-1/5 bg-stone-800 p-4">
         {categories.map((category, idx) => (
           <WatchListMenu
@@ -158,7 +158,7 @@ const WatchList: FC = () => {
         {/*Ajout d'un fenetre pour saisie de la nouvelle category*/}
         {isModalOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-stone-800 p-6 rounded-lg shadow-lg">
+            <div className="bg-grey-800 p-6 rounded-lg shadow-lg">
               <h2 className="text-lg font-semibold mb-4">
                 Ajouter une nouvelle catégorie
               </h2>
