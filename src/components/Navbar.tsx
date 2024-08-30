@@ -11,7 +11,7 @@ const Navbar: FC<IProps> = (props) => {
   const { searchValue, onSearchChange } = props;
 
   return (
-    <div className="fixed bg-stone-800 w-full flex justify-between items-center p-3 text-white">
+    <div className="sticky bg-stone-800 w-full flex justify-between items-center p-3 text-white">
       <div className="basis-1/4 flex justify-center items-center">
         <h1 className="text-2xl">WatchMeSwipe</h1>
       </div>
