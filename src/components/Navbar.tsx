@@ -7,6 +7,7 @@ type IProps = {
   searchValue: string;
 };
 
+
 const Navbar: FC<IProps> = (props) => {
   const { searchValue, onSearchChange } = props;
 

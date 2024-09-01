@@ -6,6 +6,7 @@ type IProps = {
   value: string;
 };
 
+
 const SearchInput: FC<IProps> = (props) => {
   const { onChange, onClick, value } = props;
 
