@@ -24,7 +24,7 @@ const Navbar: FC<IProps> = (props) => {
       </div>
       <div className="basis-1/6 flex justify-center items-center">
         <Button
-          className="bg-orange-500 text-black font-semibold py-2 px-4 rounded hover:bg-orange-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-300 border border-stone-800 hover:border-gray-500 w-1/2"
+          className="w-1/2"
           label="Connexion"
           onClick={() => console.log("test")}
         ></Button>
